@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            transition: top 0.3s;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            cursor: pointer;
+        }
+
+        #menu-icon {
+            display: none;
+            color: white;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        section {
+            display: none;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #home {
+            background-color: #f2f2f2;
+        }
+
+        #about {
+            background-color: #d9edf7;
+        }
+
+        #portfolio {
+            background-color: #dff0d8;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Media Query for Small Screens */
+        @media screen and (max-width: 768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            #menu-icon {
+                display: block;
+            }
+
+            section {
+                padding-top: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <span id="menu-icon" onclick="toggleNav()">&#9776;</span>
+        <nav>
+            <a href="#" onclick="showSection('home')">Home</a>
+            <a href="#" onclick="showSection('about')">About</a>
+            <a href="#" onclick="showSection('portfolio')">Portfolio</a>
+        </nav>
+    </header>
+
+    <section id="home" style="display: flex;">
+        <h1>Welcome to My Portfolio</h1>
+        <!-- Your content for the home section goes here -->
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <!-- Your content for the about section goes here -->
+    </section>
+
+    <section id="portfolio">
+        <h2>My Portfolio</h2>
+        <!-- Your content for the portfolio section goes here -->
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+
+            const targetSection = document.getElementById(sectionId);
+            targetSection.style.display = 'flex';
+
+            // Optionally, you can add smooth scrolling when switching sections
+            window.scrollTo({
+                top: targetSection.offsetTop,
+                behavior: 'smooth'
+            });
+
+            // Close the navigation on small screens after selecting a section
+            closeNav();
+        }
+
+        function toggleNav() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('show');
+        }
+
+        function closeNav() {
+            const nav = document.querySelector('nav');
+            nav.classList.remove('show');
+        }
+
+        let prevScrollPos = window.pageYOffset;
+        window.onscroll = function () {
+            let currentScrollPos = window.pageYOffset;
+            if (prevScrollPos > currentScrollPos) {
+                document.querySelector('header').style.top = '0';
+            } else {
+                document.querySelector('header').style.top = '-70px';
+            }
+            prevScrollPos = currentScrollPos;
+        };
+    </script>
+</body>
+</html>
