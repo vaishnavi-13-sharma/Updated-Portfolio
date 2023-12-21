@@ -35,3 +35,20 @@ window.onscroll = function () {
     }
     prevScrollPos = currentScrollPos;
 };
+
+function showSection(sectionId) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        section.style.display = 'none';
+    });
+
+    const targetSection = document.getElementById(sectionId);
+    targetSection.style.display = 'flex';
+
+    window.scrollTo({
+        top: targetSection.offsetTop,
+        behavior: 'smooth'
+    });
+
+    closeNav();
+}
