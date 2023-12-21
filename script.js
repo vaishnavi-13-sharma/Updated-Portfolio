@@ -52,13 +52,23 @@ function showSection(sectionId) {
 
     closeNav();
 }
+function handleScroll() {
+    const nav = document.querySelector('nav');
+    const scrollClass = 'scroll';
+    
+    if (window.scrollY > 0) {
+        nav.classList.add(scrollClass);
+    } else {
+        nav.classList.remove(scrollClass);
+    }
+}
 
-document.addEventListener("DOMContentLoaded", function() {
+addEventListener("DOMContentLoaded", function() {
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
         section.style.display = 'none';
     });
 
-    // Show the home section
     showSection('home');
+    window.addEventListener('scroll', handleScroll);
 });

@@ -23,7 +23,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #f7f8f6;
+    background-color: #f8faf8;
     color: #333;
     padding: 15px 0;
     text-align: center;
@@ -63,6 +63,10 @@ nav a::before {
 nav a:hover::before {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+nav.scroll, nav.scroll.icon{
+    background-color: #f3f3f4;
 }
 
 #menu-icon {
