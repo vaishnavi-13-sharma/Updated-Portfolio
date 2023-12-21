@@ -82,7 +82,6 @@
             padding: 10px 0;
         }
 
-        /* Media Query for Small Screens */
         @media screen and (max-width: 768px) {
             nav {
                 display: none;
@@ -116,17 +115,14 @@
 
     <section id="home" style="display: flex;">
         <h1>Welcome to My Portfolio</h1>
-        <!-- Your content for the home section goes here -->
     </section>
 
     <section id="about">
         <h2>About Me</h2>
-        <!-- Your content for the about section goes here -->
     </section>
 
     <section id="portfolio">
         <h2>My Portfolio</h2>
-        <!-- Your content for the portfolio section goes here -->
     </section>
 
     <footer>
@@ -143,13 +139,11 @@
             const targetSection = document.getElementById(sectionId);
             targetSection.style.display = 'flex';
 
-            // Optionally, you can add smooth scrolling when switching sections
             window.scrollTo({
                 top: targetSection.offsetTop,
                 behavior: 'smooth'
             });
 
-            // Close the navigation on small screens after selecting a section
             closeNav();
         }
 
