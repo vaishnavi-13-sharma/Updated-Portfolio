@@ -29,7 +29,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: #E6CCB2;
+            background-color: #f7f8f6;
             color: #333;
             padding: 15px 0;
             text-align: center;
@@ -64,43 +64,45 @@
         }
 
         #home {
-            background-color: #ede0d4;
+            background-color:#f8faf8;
         }
 
         #about {
-            background-color: #ede0d4;
+            background-color:#f8faf8;
         }
 
         #portfolio {
-            background-color: #ede0d4;
+            background-color: #f8faf8;
         }
 
         footer {
-            background-color: #E6CCB2;
+            background-color: #f7f8f6;
             color: #333;
             text-align: center;
             padding: 10px 0;
         }
 
         @media screen and (max-width: 768px) {
-            nav {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav.show {
-                display: flex;
-            }
-
-            #menu-icon {
-                display: block;
-            }
-
-            section {
-                padding-top: 60px;
-            }
+        nav {
+            display: none; /* Fixed typo here */
+            flex-direction: column;
+            align-items: center;
         }
+
+        nav.show {
+            display: flex;
+        }
+
+        #menu-icon {
+            display: block;
+        }
+
+        section {
+            padding-top: 60px;
+            display: block; /* Use block instead of flex */
+        }
+    }
+
     </style>
 </head>
 <body>
